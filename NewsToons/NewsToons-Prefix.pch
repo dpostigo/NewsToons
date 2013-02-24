@@ -1,0 +1,29 @@
+//
+// Prefix header for all source files of the 'NewsToons' target in the 'NewsToons' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "TestFlight.h"
+	#import "Constants.h"
+	#import "VTPG_Common.h"
+    #import "UIView+Addons.h"
+
+#endif
+
+
+#ifdef UI_USER_INTERFACE_IDIOM
+#define IS_IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IPHONE (!IS_IPAD())
+#define IPAD IS_IPAD()
+#else
+#define IS_IPAD() (false)
+#endif
+
